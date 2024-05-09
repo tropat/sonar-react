@@ -1,10 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 const Platnosci = ({ formData, setFormData }) => {
     const handleInputChange = event => {
         const { name, value } = event.target;
-        var newValue = name === "Cena" ? parseFloat(value) : value;
+        let newValue = name === "Cena" ? parseFloat(value) : value;
         if(name === "Cena") {
             newValue = parseFloat(value);
         } else if(name === "KategoriaID") {
@@ -42,6 +43,11 @@ const Platnosci = ({ formData, setFormData }) => {
             </form>
         </div>
     );
+};
+
+Platnosci.propTypes = {
+    formData: PropTypes.object.isRequired,
+    setFormData: PropTypes.func.isRequired,
 };
 
 export default Platnosci;
