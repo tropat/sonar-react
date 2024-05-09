@@ -7,11 +7,7 @@ const Produkty = ({ produkty, setProdukty }) => {
     useEffect(() => {
         const fetchProdukty = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/produkty', {
-                    headers: {
-                        'Access-Control-Allow-Origin': '*'
-                    }
-                });
+                const response = await axios.get('http://localhost:8080/produkty', {});
                 setProdukty(response.data);
             } catch (error) {
                 console.error('Błąd podczas pobierania danych:', error);

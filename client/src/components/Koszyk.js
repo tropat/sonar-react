@@ -7,11 +7,7 @@ const Koszyk = ({ koszyk, setKoszyk }) => {
     useEffect(() => {
         const fetchKoszyk = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/koszyk/1', {
-                    headers: {
-                        'Access-Control-Allow-Origin': '*'
-                    }
-                });
+                const response = await axios.get('http://localhost:8080/koszyk/1', {});
                 setKoszyk(response.data);
             } catch (error) {
                 console.error('Błąd podczas pobierania danych koszyka:', error);
