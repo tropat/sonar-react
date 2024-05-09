@@ -25,7 +25,7 @@ const Produkty = ({ produkty, setProdukty }) => {
         <div>
             <h2>Produkty</h2>
             <ul>
-                {produkty && produkty.map(produkt => (
+                {produkty?.map(produkt => (
                     <li key={produkt.ID}>Produkt {produkt.Nazwa} Kategorii {produkt.KategoriaID}: {produkt.Cena} zl</li>
                 ))}
             </ul>
