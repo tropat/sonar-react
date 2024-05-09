@@ -25,7 +25,7 @@ const Koszyk = ({ koszyk, setKoszyk }) => {
         <div>
             <h2>Koszyk</h2>
             <ul>
-                {koszyk.Produkty && koszyk.Produkty.map(produkt => (
+                {koszyk.Produkty?.map(produkt => (
                     <li key={produkt.ID}>Produkt {produkt.Nazwa} Kategorii {produkt.KategoriaID}: {produkt.Cena} zl</li>
                 ))}
             </ul>
