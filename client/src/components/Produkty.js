@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 const Produkty = ({ produkty, setProdukty }) => {
 
@@ -24,12 +25,17 @@ const Produkty = ({ produkty, setProdukty }) => {
         <div>
             <h2>Produkty</h2>
             <ul>
-                {produkty.map(produkt => (
+                {produkty && produkty.map(produkt => (
                     <li key={produkt.ID}>Produkt {produkt.Nazwa} Kategorii {produkt.KategoriaID}: {produkt.Cena} zl</li>
                 ))}
             </ul>
         </div>
     );
+};
+
+Produkty.propTypes = {
+    produkty: PropTypes.array.isRequired,
+    setProdukty: PropTypes.func.isRequired,
 };
 
 export default Produkty;
