@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
 const Koszyk = ({ koszyk, setKoszyk }) => {
@@ -30,6 +31,20 @@ const Koszyk = ({ koszyk, setKoszyk }) => {
             </ul>
         </div>
     );
+};
+
+Koszyk.propTypes = {
+    koszyk: PropTypes.shape({
+        Produkty: PropTypes.arrayOf(
+            PropTypes.shape({
+                ID: PropTypes.number.isRequired,
+                Nazwa: PropTypes.string.isRequired,
+                KategoriaID: PropTypes.number.isRequired,
+                Cena: PropTypes.number.isRequired
+            })
+        ).isRequired
+    }).isRequired,
+    setKoszyk: PropTypes.func.isRequired,
 };
 
 export default Koszyk;
